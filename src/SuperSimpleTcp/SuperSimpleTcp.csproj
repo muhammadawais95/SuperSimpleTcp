@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.1;net461;net462;net48;net6.0;net7.0;net8.0</TargetFrameworks>
+		<TargetFrameworks>net452</TargetFrameworks>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Version>3.0.14</Version>
 		<PackageReleaseNotes>Await fix, thank you @olifer</PackageReleaseNotes>

@@ -571,7 +571,8 @@ namespace SuperSimpleTcp
                             if (retryCount > 0) msg += $" ({retryCount} retries)";
                             Logger?.Invoke(msg);
 
-                            _client.Dispose();
+                            //_client.Dispose();
+                            _client.Close();
                             _client = _settings.LocalEndpoint == null ? new TcpClient() : new TcpClient(_settings.LocalEndpoint);
                             _client.NoDelay = _settings.NoDelay;
                             _client.ConnectAsync(_serverIp, _serverPort).Wait(1000, connectToken);
@@ -834,7 +835,7 @@ namespace SuperSimpleTcp
                 if (_client != null)
                 {
                     _client.Close();
-                    _client.Dispose();
+                    //_client.Dispose();
                 }
 
                 Logger?.Invoke($"{_header}dispose complete");

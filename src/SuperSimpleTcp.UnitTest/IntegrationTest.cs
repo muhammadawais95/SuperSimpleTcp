@@ -69,7 +69,7 @@ namespace SuperSimpleTcp.UnitTest
             {
                 serverReceiveData = true;
 
-                var receivedData = Encoding.UTF8.GetString(e.Data);
+                var receivedData = Encoding.UTF8.GetString(e.Data.Array);
                 Trace.WriteLine($"{nameof(ServerDataReceived)} - {receivedData}");
 
                 if (testData != receivedData)
@@ -87,7 +87,7 @@ namespace SuperSimpleTcp.UnitTest
             {
                 clientReceiveData = true;
 
-                var receivedData = Encoding.UTF8.GetString(e.Data);
+                var receivedData = Encoding.UTF8.GetString(e.Data.Array);
                 Trace.WriteLine($"{nameof(ClientDataReceived)} - {receivedData}");
 
                 if (!Enumerable.SequenceEqual(e.Data, acknowledgeData))

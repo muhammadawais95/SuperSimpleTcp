@@ -89,7 +89,7 @@ namespace SuperSimpleTcp
             if (_tcpClient != null)
             {
                 _tcpClient.Close();
-                _tcpClient.Dispose(); 
+                //_tcpClient.Dispose(); 
             }
 
             SendLock.Dispose();
